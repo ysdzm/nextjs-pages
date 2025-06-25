@@ -21,8 +21,8 @@ jobs:
       - name: Install NPM packages
         run: npm ci
 
-      - name: Patch missing swc/lightningcss binaries
-        run: npx next
+      - name: Patch missing swc/lightningcss dependencies (no hang)
+        run: npx next build --no-lint || true
 
       - name: Build Next.js app
         run: npm run build
