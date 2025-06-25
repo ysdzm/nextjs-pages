@@ -21,6 +21,9 @@ jobs:
       - name: Install NPM packages
         run: npm ci
 
+      - name: Patch missing swc/lightningcss binaries
+        run: npx next
+
       - name: Build Next.js app
         run: npm run build
         env:
