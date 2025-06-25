@@ -18,11 +18,8 @@ jobs:
         with:
           node-version: 18.x
 
-      - name: Install NPM packages
-        run: npm ci
-
-      - name: Patch missing swc/lightningcss dependencies (no hang)
-        run: npx next build --no-lint || true
+      - name: Install dependencies without using lockfile
+        run: npm install --no-package-lock
 
       - name: Build Next.js app
         run: npm run build
